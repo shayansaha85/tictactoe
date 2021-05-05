@@ -1,14 +1,22 @@
 var restart = document.querySelector("#b");
 var squares = document.querySelectorAll("td");
+var player1 = document.querySelector("#player1");
+var player2 = document.querySelector("#player2");
+
+
 
 function clearBoard() {
     for(var i=0; i<squares.length; i++) {
         squares[i].textContent = "";
     }
     document.querySelector("h3").textContent= '';
+    player1.value = "";
+    player2.value = "";
 }
 
 restart.addEventListener('click',clearBoard);
+
+
 
 
 function changeMarker() {
@@ -31,19 +39,25 @@ let count=0;
 
 for(var i=0;i<squares.length;i++) {
     if(squares[i].textContent==='X' || squares[i].textContent ==='O') {
-        count++;
-    }
-}
-
-if(count== squares.length) {
-    
-    var m = declareWinner();
-    if(m=="x"){
-        document.querySelector("h3").textContent = "X is the winner!";
-    } else if(m=="o") {
-        document.querySelector("h3").textContent = "O is the winner!";
-    } else {
-        document.querySelector("h3").textContent = "Draw!";
+        var m = declareWinner();
+        if(m=="x"){
+            if(player1.value === ''){
+                document.querySelector("h3").textContent = "X is the winner!";
+            }
+            else {
+                document.querySelector("h3").textContent = player1.value+" is the winner!";
+            }
+        } else if(m=="o") {
+            if(player1.value === ''){
+                document.querySelector("h3").textContent = "O is the winner!";
+            }
+            else {
+                document.querySelector("h3").textContent = player2.value+" is the winner!";
+            }
+        }
+        else {
+            document.querySelector("h3").textContent = "";
+        }
     }
 }
 }

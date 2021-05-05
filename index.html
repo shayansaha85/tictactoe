@@ -18,7 +18,28 @@
       <div class="jumbotron">
         <h2>Tic Tac Toe</h2>
         <p id="p">Get ready to play tic tac toe</p>
-        <button id="b" type="button" class="btn btn-primary">Restart</button>
+        <form class="form-inline">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="player1"
+              placeholder="Player 1 name (X)"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="player2"
+              placeholder="Player 2 name (O)"
+            />
+          </div>
+        </form>
+        <br />
+        <button id="b" type="button" class="btn btn-primary btn-lg">
+          Reset
+        </button>
       </div>
 
       <table align="center">
@@ -40,7 +61,6 @@
           <td></td>
         </tr>
       </table>
-      <br />
       <br />
 
       <h3 align="center"></h3>
